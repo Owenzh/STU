@@ -1,0 +1,61 @@
+<div class="col-md-10">
+    <div class="content">
+        <!--帖子详情-->
+        <div class="row-fluid post">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                    <tr class="post_title">
+                        <th colspan="3"><img src="/imgs/tiez.jpg" class="post_photo img-rounded"><span
+                                    class="post_title"><%= p_data[0]["p_title"] %></span></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% for(var i = 0; i < c_count; i++) { %>
+                    <tr class="comment_row">
+                        <td><img src="/imgs/male.png" class="comment_photo img-circle">
+                            <span class="small text-muted"><%= c_data[i]["c_creator"] %></span></td>
+                        <td><%= c_data[i]["c_content"] %></td>
+                        <td><span class="small text-muted pull-right"><%= c_data[i]["c_date"] %></span></td>
+                    </tr>
+                    <% } %>
+                    <tr>
+                        <td colspan="3"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--回复帖子-->
+        <div class="row-fluid">
+            <div class="col-md-12">
+                <div class="comments">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <div class="panel-title">
+                                发表回复
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" method="post" action="/doAddComment">
+
+                                <p><textarea id="ipt_c_content" name="ipt_c_content" cols="50"
+                                             rows="6"></textarea></p>
+                                <!--<a href="#" id="send_comment" class="btn btn-primary">回复</a>-->
+                                <input type="text" name="ipt_user_name" id="ipt_user_name" hidden>
+                                <input type="text" name="ipt_user_id" id="ipt_user_id" hidden>
+                                <input type="text" name="ipt_p_id" id="ipt_p_id"
+                                       value="<%= p_data[0]["p_id"] %>" hidden>
+
+                                <button class="btn btn-primary">回复</button>
+                            </form>
+                        </div>
+                        <div class="panel-footer"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

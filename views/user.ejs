@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/css/index.css'/>
+    <link rel='stylesheet' href='/css/post.css'/>
+    <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="/js/jquery.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/user.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <!--顶部-->
+    <div class="row-fluid">
+        <div class="col-md-12">
+            <p class="navbar-fixed-top"></p>
+        </div>
+    </div>
+    <!--主体内容-->
+    <div class="row-fluid">
+        <!--左侧边栏-->
+        <div class="col-md-2 left_side">
+            <div class="user_panel">
+                <img class="photo" src="/imgs/male.png" width="150px">
+
+                <div class="user_info">
+                    <p>
+                        <label>用户名：</label><span id="user_name"></span>
+                    </p>
+
+                    <p>
+                        <label>角色：</label><span id="user_role"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="fun_list" id="fun_list">
+                <ul class="nav nav-list">
+                    <li class="nav-header">
+                    </li>
+                    <li>
+                        <a id="query_post" href="#">查看帖子</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <!--内容-->
+        <div class="col-md-10">
+            <div class="content">
+
+                <!--帖子类表 post_list_section-->
+                <div id="post_list_section" class="row-fluid">
+                    <div class="col-md-12">
+                        <table class="table tie_table">
+                            <thead>
+                            <tr class="tie_th">
+                                <th colspan="5">帖子列表<span class="badge" id="p_counts"></span></th>
+                            </tr>
+                            </thead>
+                            <tbody id="post_list_content">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <!--帖子详情 post_detail_section-->
+                <div id="post_detail_section" class="row-fluid post">
+                    <div class="col-md-12">
+                        <table class="table">
+                            <thead>
+                            <tr class="post_title">
+                                <th colspan="3"><img src="/imgs/tiez.jpg" class="post_photo img-rounded"><span
+                                            class="post_title" id="post_header"></span></th>
+                            </tr>
+                            </thead>
+                            <tbody id="post_detail_body">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--回复帖子 add_comment_section-->
+                <div id ="add_comment_section" class="row-fluid">
+                    <div class="col-md-12">
+                        <div class="comments">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        发表回复
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+
+                                    <p><textarea id="ipt_c_content" name="ipt_c_content" cols="50"
+                                                 rows="6"></textarea></p>
+                                    <input type="text" name="ipt_user_name" id="ipt_user_name" hidden>
+                                    <input type="text" name="ipt_user_id" id="ipt_user_id" hidden>
+                                    <input type="text" name="ipt_p_id" id="ipt_p_id" hidden>
+                                    <a href="#" id="send_comment" class="btn btn-primary">回复</a>
+
+                                </div>
+                                <div class="panel-footer"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="row-fluid">
+        <div class="col-md-12">
+            <p class="navbar-fixed-bottom"></p>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

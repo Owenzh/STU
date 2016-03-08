@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/css/post.css'/>
+    <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="/js/jquery.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            //hidden
+            $("#ipt_user_id").val($.cookie('stu_user_id'));
+            $("#ipt_user_name").val($.cookie('stu_user_name'));
+
+//            function commonErrorHandler() {
+//                alert("操作失败");
+//            }
+//
+//            function handSuccess(data, textStatus, jqXHR) {
+//
+//            }
+//
+//            function sendComment() {
+//                //TODO
+//                var content = $("#ipt_c_content").val();
+//                var commentData = {
+//                    c_content: content,
+//                    c_creator_id: user_id,
+//                    c_creator: user_name
+//                };
+//                $.ajax({
+//                    type: 'post',
+//                    url: '/doAddComment',
+//                    data: commentData,
+//                    success: handSuccess,
+//                    error: commonErrorHandler
+//                });
+//            }
+//
+//            $("#send_comment").bind("click", sendComment);
+//            //sendComment();
+        });
+
+    </script>
+</head>
+<body>
+<div class="container-fluid">
+    <!--顶部-->
+    <div class="row-fluid">
+        <div class="col-md-12">
+            <p class="navbar-fixed-top"></p>
+        </div>
+    </div>
+    <!--主体内容-->
+    <div class="row-fluid">
+        <!--左侧边栏-->
+        <div class="col-md-2 left_side">
+            <div class="user_panel">
+                <img class="photo" src="/imgs/male.png" width="150px">
+
+                <div class="user_info">
+                    <p>
+                        <label>用户名：</label><span id="user_name"></span>
+                    </p>
+
+                    <p>
+                        <label>角色：</label><span id="user_role"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="fun_list" id="fun_list">
+                <ul class="nav nav-list">
+                    <li class="nav-header">
+                        用户管理
+                    </li>
+                    <li class="active">
+                        <a href="#">查询用户</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">修改用户</a>
+                    </li>
+                    <li>
+                        <a href="#">删除用户</a>
+                    </li>
+                    <li class="split"></li>
+                    <li class="nav-header">
+                        帖子管理
+                    </li>
+                    <li>
+                        <a id="send_post" href="#">发帖子</a>
+                    </li>
+                    <li>
+                        <a id="query_post" href="#">查看帖子</a>
+                    </li>
+                    <li>
+                        <a id="delete_post" href="#">删除帖子</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="content">
+                <!--帖子详情-->
+                <div class="row-fluid post">
+                    <div class="col-md-12">
+                        <table class="table">
+                            <thead>
+                            <tr class="post_title">
+                                <th colspan="3"><img src="/imgs/tiez.jpg" class="post_photo img-rounded"><span
+                                            class="post_title"><%= p_data[0]["p_title"] %></span></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <% for(var i = 0; i < c_count; i++) { %>
+                            <tr class="comment_row">
+                                <td><img src="/imgs/male.png" class="comment_photo img-circle">
+                                    <span class="small text-muted"><%= c_data[i]["c_creator"] %></span></td>
+                                <td><%= c_data[i]["c_content"] %></td>
+                                <td><span class="small text-muted pull-right"><%= c_data[i]["c_date"] %></span></td>
+                            </tr>
+                            <% } %>
+                            <tr>
+                                <td colspan="3"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!--回复帖子-->
+                <div class="row-fluid">
+                    <div class="col-md-12">
+                        <div class="comments">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="panel-title">
+                                        发表回复
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <form class="form-horizontal" method="post" action="/doAddComment">
+
+                                        <p><textarea id="ipt_c_content" name="ipt_c_content" cols="50"
+                                                     rows="6"></textarea></p>
+                                        <!--<a href="#" id="send_comment" class="btn btn-primary">回复</a>-->
+                                        <input type="text" name="ipt_user_name" id="ipt_user_name" hidden>
+                                        <input type="text" name="ipt_user_id" id="ipt_user_id" hidden>
+                                        <input type="text" name="ipt_p_id" id="ipt_p_id"
+                                               value="<%= p_data[0]["p_id"] %>" hidden>
+
+                                        <button class="btn btn-primary">回复</button>
+                                    </form>
+                                </div>
+                                <div class="panel-footer"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="row-fluid">
+        <div class="col-md-12">
+            <p class="navbar-fixed-bottom"></p>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

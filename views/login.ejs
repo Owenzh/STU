@@ -1,0 +1,90 @@
+<!--<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>欢迎来到 <%= title %> ！</h1>
+
+  </body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 引入 Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='/css/style.css'/>
+    <!-- HTML5 Shim 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="/js/jquery.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 login_panel">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <div class="panel-heading">
+                        <h3 class="panel-title wel_title"><b>欢迎来到<%= title %>！</b></h3>
+                    </div>
+
+                    <form class="form-horizontal" method="post" action="/doLogin">
+                        <fieldset>
+                            <div class="from-group from-field">
+                                <!-- Text input-->
+                                <label class="col-md-4 control-label" for="ipt_u_name">用户名：</label>
+
+                                <div class="col-md-8 controls">
+                                    <input type="text" placeholder="用户名" class="form-control" name="ipt_u_name">
+                                </div>
+                            </div>
+
+                            <div class="from-group from-field">
+
+                                <!-- Text input-->
+                                <label class="col-md-4 control-label" for="ipt_u_pwd">密码：</label>
+
+                                <div class="col-md-8">
+                                    <input type="password" placeholder="密码" class="form-control" name="ipt_u_pwd">
+
+                                    <p class="help-block"></p>
+                                </div>
+                            </div>
+
+                            <div class="from-group">
+                                <label class="col-md-4 control-label"></label>
+
+                                <!-- Button -->
+                                <div class="col-md-4 controls">
+                                    <button class="btn btn-success">登录</button>
+                                </div>
+                                <div class="col-md-4 controls">
+                                    <a class="btn btn-success" href="/register">注册</a>
+                                </div>
+                            </div>
+
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+</div>
+
+</body>
+</html>
