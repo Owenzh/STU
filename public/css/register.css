@@ -1,0 +1,22 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+body {
+    background: -webkit-linear-gradient(left,#4cae4c, #5bc0de); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(left,#4cae4c, #5bc0de); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left,#4cae4c, #5bc0de); /* Firefox 3.6 - 15 */
+    background: linear-gradient(left,#4cae4c, #5bc0de); /* 标准的语法 */
+
+}
+.wel_title{
+    color: #4cae4c;
+}
+.from-field{
+    padding-bottom: 10px;
+}

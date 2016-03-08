@@ -1,0 +1,107 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+/*body {*/
+    /*background: -webkit-linear-gradient(left,#4cae4c, #5bc0de); *//* Safari 5.1 - 6.0 */
+    /*background: -o-linear-gradient(left,#4cae4c, #5bc0de); *//* Opera 11.1 - 12.0 */
+    /*background: -moz-linear-gradient(left,#4cae4c, #5bc0de); *//* Firefox 3.6 - 15 */
+    /*background: linear-gradient(left,#4cae4c, #5bc0de); *//* 标准的语法 */
+
+/*}*/
+
+.wel_title {
+    font-style: italic;
+    color: fuchsia;
+}
+
+.u_login {
+
+}
+.login_panel{
+    /*height: 800px;*/
+}
+.panel-heading{
+    margin-bottom: 1.5em;
+}
+.from-group.from-field{
+    margin-bottom: 4em;
+}
+
+.navbar-fixed-top,.navbar-fixed-bottom {
+    border: solid 1px #4cae4c;
+    height: 50px;
+    background-color: #4cae4c;
+}
+
+.left_side{
+    border: solid 1px #aeab73;
+    height: 0px;
+    padding-bottom: 70%;/*实现左侧栏满屏*/
+}
+
+.nav-header{
+    margin-bottom: 5px;
+    padding: 3px;
+    background-color: #4cae4c;
+    color: #eee;
+}
+
+.nav-list {
+    border: solid 1px #4cae4c;
+}
+.nav-list > li {
+    border-color: #eee #eee #ddd;
+}
+.nav-list > .split {
+    margin-bottom: 5px;
+}
+.nav-list > li > a:hover {
+    border-color: #eee #eee #ddd;
+    background-color: #4cae4c;
+}
+.male_photo{
+    background: url('../imgs/male.png') no-repeat;
+}
+.user_panel{
+    margin: 10px 0px 20px 0px;
+    padding: 0 8px 0 5px;
+    border: solid 1px #4cae4c;
+}
+
+.user_panel .photo{
+    margin: 10px 0;
+}
+.fun_list{
+
+}
+.content{
+    border: solid 1px #5cb85c;
+    height:0;
+    padding-bottom: 87%;
+    background: url("../imgs/back_small.png") repeat fixed;
+}
+.comment_row{
+    height: 70px;
+}
+.post_photo{
+    width: 30px;
+    height: 30px;
+}
+.post_title{
+    padding: 10px;
+    color: #00B7FF;
+}
+.comment_photo{
+    width: 40px;
+    height: 40px;
+}
+.comments{
+    height: 0;
+    padding-top: 5%;
+}
